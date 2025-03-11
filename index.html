@@ -5,75 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankith M - Portfolio</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
             background-color: #f5f5f5;
+            line-height: 1.6;
         }
         header {
-            background-color: #4CAF50;
-            padding: 20px;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            padding: 40px 20px;
             text-align: center;
             color: white;
         }
         nav {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            background-color: #333;
-            padding: 10px 0;
+            gap: 30px;
+            background-color: #222;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #4CAF50;
         }
         section {
             max-width: 1000px;
             margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, filter 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+        section:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
         h2 {
             color: #4CAF50;
-            margin-top: 0;
+            margin-bottom: 20px;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            padding: 8px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #eee;
         }
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
+            padding: 20px;
+            background-color: #222;
             color: white;
             margin-top: 20px;
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4CAF50;
             color: white;
             border-radius: 5px;
             text-decoration: none;
-            margin-top: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s;
         }
-        .hero {
-            background-color: #333;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 8px;
+        .btn:hover {
+            background-color: #2E7D32;
+            transform: scale(1.1);
         }
-        .contact-info p {
-            margin: 5px 0;
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 30px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #4CAF50;
         }
     </style>
 </head>
@@ -87,6 +115,7 @@
 <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
@@ -94,7 +123,7 @@
 
 <section id="about">
     <h2>About Me</h2>
-    <p>Hi! I'm Ankith M, a passionate Full Stack Developer with experience in building scalable web applications and microservices. I'm skilled in both frontend and backend development, utilizing modern technologies to create efficient, user-friendly solutions.</p>
+    <p>Hi! I'm Ankith M, a dedicated Full Stack Developer with a passion for developing scalable, efficient, and intuitive applications. I specialize in creating seamless user experiences and leveraging modern technologies to drive innovation.</p>
 </section>
 
 <section id="skills">
@@ -110,19 +139,25 @@
 
 <section id="experience">
     <h2>Experience</h2>
-    <h3>Velocity Portfolio Group (Sep 2023 – Present)</h3>
-    <p>Full Stack Java Developer | NJ, United States</p>
+    <p><strong>Velocity Portfolio Group (Sep 2023 – Present)</strong></p>
     <ul>
         <li>Architected microservices in Spring Boot with Kafka for real-time data processing.</li>
         <li>Built scalable front-end solutions using React.js and AngularJS.</li>
         <li>Designed CI/CD pipelines reducing production errors by 70%.</li>
     </ul>
 
-    <h3>Ariqt International (Mar 2019 – Jul 2021)</h3>
-    <p>Full Stack Java Developer | Hyderabad, India</p>
+    <p><strong>Ariqt International (Mar 2019 – Jul 2021)</strong></p>
     <ul>
-        <li>Developed recommendation systems using Spark MLlib and AWS EMR.</li>
+        <li>Engineered recommendation systems using Spark MLlib and Spring Boot.</li>
+        <li>Built scalable cloud-native machine learning pipelines on AWS EMR.</li>
         <li>Optimized microservices and RESTful APIs in Kubernetes environments.</li>
+    </ul>
+
+    <p><strong>Strobes Security Inc (July 2017 – Feb 2019)</strong></p>
+    <ul>
+        <li>Led development of enterprise-grade microservices using Spring Boot and JPA.</li>
+        <li>Developed RESTful APIs with JAX-RS and Jersey for large-scale apps.</li>
+        <li>Enhanced DevOps processes using Maven and Jenkins CI/CD pipelines.</li>
     </ul>
 </section>
 
@@ -134,10 +169,8 @@
 
 <section id="contact">
     <h2>Contact Me</h2>
-    <div class="contact-info">
-        <p>Email: <a href="mailto:ankith.b888@gmail.com">ankith.b888@gmail.com</a></p>
-        <p>Phone: +1 9136387183</p>
-    </div>
+    <p>Email: <a href="mailto:ankith.b888@gmail.com">ankith.b888@gmail.com</a></p>
+    <p>Phone: +1 9136387183</p>
     <a href="mailto:ankith.b888@gmail.com" class="btn">Send a Message</a>
 </section>
 
